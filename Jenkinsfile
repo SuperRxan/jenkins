@@ -6,6 +6,8 @@ pipeline {
                 script {
                     node('master') {
                         echo "Build started "
+                        echo "${WORKSPACE}"
+                        
                     }
                   }
             }

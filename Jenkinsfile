@@ -51,21 +51,4 @@ pipeline {
     }
 }
 
- post {  
-         success {  
-         			script {
-            			   	node('master') {
-             								echo 'Build is Successful'
-        
-         		}  
-         	}
-         }
-         failure {
-            		script {
-            			   	node('master') {
-                                         cho 'Build is error'  
-                     }
-               }
-         }  
-     } 
 

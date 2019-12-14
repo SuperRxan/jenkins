@@ -7,6 +7,7 @@ pipeline {
                     node('master') {
                         echo "Build started "
                     }
+                  }
             }
         }
     }

@@ -7,7 +7,7 @@ pipeline {
                     node('master') {
                         echo "Build started "
                         echo "${WORKSPACE}"
-                        executecommand commandname:"./test.sh"
+                        sh "./test.sh"
                     }
                   }
             }

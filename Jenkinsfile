@@ -3,7 +3,10 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'go version'
+                script {
+                    node('master') {
+                        echo "Build started "
+                    }
             }
         }
     }

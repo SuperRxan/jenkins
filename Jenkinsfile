@@ -12,5 +12,60 @@ pipeline {
                   }
             }
         }
+        
+        stage('test') {
+            steps {
+                script {
+                    node('master') {
+                        echo "Test started "
+                        echo "${WORKSPACE}"
+                        sh "ls"
+                    }
+                  }
+            }
+        }
+    
+        stage('docker') {
+            steps {
+                script {
+                    node('master') {
+                        echo "Docker started "
+                        echo "${WORKSPACE}"
+                        sh "ls"
+                    }
+                  }
+            }
+        }
+        
+         stage('publish') {
+            steps {
+                script {
+                    node('master') {
+                        echo "Publish started "
+                        echo "${WORKSPACE}"
+                        sh "ls"
+                    }
+                  }
+            }
+        }
     }
+}
+
+ post {  
+         success {  
+         			script {
+            			   	node('master') {
+             								echo 'Build is Successful'
+        
+         		}  
+         	}
+         }
+         failure {
+            		script {
+            			   	node('master') {
+                                         cho 'Build is error'  
+                     }
+               }
+         }  
+     } 
 }
